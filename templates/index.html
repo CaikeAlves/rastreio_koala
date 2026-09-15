@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreio Koala</title>
+    <link rel="icon" type="image/png" href="static/imagens/logo.png">
+</head>
+<body>
+    <img src="static/imagens/logo.png" alt="">
+    <h1>Rastreio de pedidos</h1>
+
+    <form method="post" action="/">
+        <label>Nota fiscal</label>
+        <input type="number" name='nf'>
+        <br>
+        <label>CPF/CNPJ</label>
+        <input type="number" name="id">
+        <br>
+        <label>Codigo</label>
+        <input type="text" name="codigo">
+        <br>
+        <button>Rastrear</button>
+    </form>
+{% if codigo %}
+    <h2>Rastreamento</h2>
+
+    <p><strong>Código:</strong> {{ codigo }}</p>
+
+    {% for evento in eventos %}
+        <div>
+            <p><strong>{{ evento.name }}</strong></p>
+            <p>{{ evento.date }}</p>
+            <p>{{ evento.description }}</p>
+        </div>
+    {% endfor %}
+{% endif %}
+</body>
+</html>
