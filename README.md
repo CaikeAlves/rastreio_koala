@@ -9,6 +9,8 @@ Braspress
 Loggi
 Expresso São Miguel
 
+baixar as bibliotecas
+pip install -r requirements.txt
 
 mandaê
 200 → resposta recebida
